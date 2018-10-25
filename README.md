@@ -10,5 +10,5 @@ It will create two js-files after webpack build, 'jsonRender.js' records the web
 | key | type | default | description |
 |-----|------|---------| ----------- |
 | duration | Number | 60000 | interval duration for getting jsonRender.js |
-| path | String| | '' | 'webpackHashWatcher.js' output path |
+| path | String | '' | 'webpackHashWatcher.js' output path |
 | hashPath | hashPath | '' | 'jsonRender.js' output path |
