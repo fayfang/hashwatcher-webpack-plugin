@@ -47,8 +47,8 @@ function handleChange (oldArr, newArr) {
     var name = oldArr[i].name
     var hash = oldArr[i].hash
     for (var j = 0; j < newArr.length; j++) {
-      if (newArr[j].name === name && newArr[j] !== hash) {
-        diffArr.push(newArr)
+      if (newArr[j].name === name && newArr[j].hash !== hash) {
+        diffArr.push(newArr[j])
       }
     }
   }

@@ -15,7 +15,7 @@ const JsonRender = function (compilation) {
 
   output.push({
     type: 'total',
-    name: compilation.name,
+    name: compilation.name || 'webpackHashTotal',
     hash: compilation.hash,
     fullHash: compilation.fullHash,
   })
