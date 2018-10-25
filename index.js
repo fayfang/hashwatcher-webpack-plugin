@@ -9,7 +9,7 @@ const defaultConfig = {
   duration: 60000
 }
 
-class HashWatcherWebpackPlugin {
+class HashwatcherWebpackPlugin {
   constructor (config = {}) {
     this.config = Object.assign({}, defaultConfig, config);
     if (!/^\d+$/.test(this.config.duration + '')) {
@@ -26,7 +26,7 @@ class HashWatcherWebpackPlugin {
 
     // create the watcher.js for browser
     (compiler.hooks ?
-      compiler.hooks.make.tapAsync.bind(compiler.hooks.make, 'HashWatcherWebpackPlugin') :
+      compiler.hooks.make.tapAsync.bind(compiler.hooks.make, 'HashwatcherWebpackPlugin') :
       compiler.plugin.bind(compiler, 'make'))((compilation, callback) => {
       const outputOptions = {
         filename: filename,
@@ -52,7 +52,7 @@ class HashWatcherWebpackPlugin {
 
       // when html-webpack-plugin is used, inject the asset
       (compilation.hooks ?
-        compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration.tapAsync.bind(compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration, 'HashWatcherWebpackPlugin'):
+        compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration.tapAsync.bind(compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration, 'HashwatcherWebpackPlugin'):
         compilation.plugin.bind(compilation, 'html-webpack-plugin-before-html-generation'))((result, callback) => {
         result.assets.chunks['webpackHashManager'] = chunk;
         result.assets.js.push(outputName);
@@ -62,7 +62,7 @@ class HashWatcherWebpackPlugin {
 
     // create the hash.js when chunk hash been calculated
     (compiler.hooks ?
-      compiler.hooks.emit.tapAsync.bind(compiler.hooks.emit, 'HashWatcherWebpackPlugin') :
+      compiler.hooks.emit.tapAsync.bind(compiler.hooks.emit, 'HashwatcherWebpackPlugin') :
       compiler.plugin.bind(compiler, 'emit'))((compilation, callback) => {
       let json = JsonRender(compilation);
       let hashPath = this.config.hashPath + 'webpackHash.js'
@@ -81,4 +81,4 @@ class HashWatcherWebpackPlugin {
   }
 }
 
-module.exports = HashWatcherWebpackPlugin
+module.exports = HashwatcherWebpackPlugin

@@ -31,7 +31,7 @@ window.webpackHashManager = function (arr) {
 function getJs () {
   var script = document.createElement('script');
   script.id = 'webpackHashManagerScript';
-  script.url = './webpackHash.js';
+  script.src = './webpackHash.js?t=' + (+new Date());
   document.head.appendChild(script);
 };
 
