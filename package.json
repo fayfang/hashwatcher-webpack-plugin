@@ -1,0 +1,25 @@
+{
+  "name": "hashwatcher-webpack-plugin",
+  "version": "0.1.1",
+  "description": "webpackHash watcher for browser",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fayfang/hashWatcher-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "hash"
+  ],
+  "author": "fay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fayfang/hashWatcher-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/fayfang/hashWatcher-webpack-plugin#readme",
+  "peerDependencies": {
+    "webpack": "1 || ^2 || ^2.1.0-beta || ^2.2.0-rc || ^3 || ^4"
+  }
+}
