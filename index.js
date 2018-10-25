@@ -1,7 +1,8 @@
 const JsonRender = require('./utils/jsonRender');
 const path = require('path');
 const SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin');
-const fs = require('fs')
+const fs = require('fs');
+const version = '0.1.4'
 
 const defaultConfig = {
   path: '',
@@ -19,7 +20,7 @@ class HashwatcherWebpackPlugin {
   apply (compiler) {
     let childCompiler;
     let chunk = {};
-    const filename = this.config.path + 'webpackHashWatcher.js';
+    const filename = this.config.path + version + 'webpackHashWatcher.js';
     const publicPath = compiler.options.output.publicPath || '';
     const outputName = publicPath + filename;
     const template = path.join(__dirname, './utils/webpackHashWatcher.js');
