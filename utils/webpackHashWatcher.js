@@ -18,10 +18,10 @@ window.webpackHashManager = function (arr) {
 
   if (!isInit) {
     isInit = true;
-    return
+    return false;
   };
 
-  var diffArr = handleChange(evt.newArr, evt.oldArr);
+  var diffArr = handleChange(evt.oldArr, evt.newArr);
   if (diffArr.length) {
     evt.diffArr = diffArr;
     document.dispatchEvent(evt);
@@ -41,20 +41,46 @@ function removeScript () {
 };
 
 function handleChange (oldArr, newArr) {
-  var diffArr = []
-
-  for (var i = 0; i < oldArr.length; i ++) {
-    var name = oldArr[i].name
-    var hash = oldArr[i].hash
-    for (var j = 0; j < newArr.length; j++) {
-      if (newArr[j].name === name && newArr[j].hash !== hash) {
-        diffArr.push(newArr[j])
-      }
+  var diffArr = [];
+  var oldMap = getMap(oldArr);
+  var newMap = getMap(newArr);
+  
+  for (var i = 0; i < oldArr.length; i++) {
+    var name = oldArr[i].name;
+    var hash = oldArr[i].hash;
+    var mapObj = newMap[name];
+    if (!mapObj) {
+      diffArr.push(Object.assign({
+        diffType: 'delete'
+      }, oldArr[i]));
+    } else if (hash !== mapObj.hash) {
+      diffArr.push(Object.assign({
+        diffType: 'change'
+      }, oldArr[i]));
     }
-  }
+  };
 
-  return diffArr
+  for (var j = 0; j < newArr.length; j++) {
+    var name = newArr[j].name;
+    var hash = newArr[j].hash;
+    var mapObj = oldMap[name];
+    if (!mapObj) {
+      diffArr.push(Object.assign({
+        diffType: 'new'
+      }, newArr[j]));
+    }
+  };
+
+  return diffArr;
 };
+
+function getMap (arr) {
+  var obj = {};
+  for (var i = 0; i < arr.length; i ++) {
+    obj[arr[i].name] = arr[i];
+  };
+  return obj;
+}
 
 getJs();
 setInterval(function () {

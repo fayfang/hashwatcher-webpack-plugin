@@ -2,7 +2,7 @@ const JsonRender = require('./utils/jsonRender');
 const path = require('path');
 const SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin');
 const fs = require('fs');
-const version = '0.1.4'
+const version = '0.1.4.'
 
 const defaultConfig = {
   path: '',
