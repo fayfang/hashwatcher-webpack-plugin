@@ -43,8 +43,8 @@ module.exports = {
 ```
 index.js
 ``` javascript
-  // wehn then hash change, it will receive a 'webpackHashChange' event
-  document.addEventListener('webpackHashChange', (e) => {
-    console.log(e.diffArr)
-  })
+// wehn then hash change, it will receive a 'webpackHashChange' event
+document.addEventListener('webpackHashChange', (e) => {
+  console.log(e.diffArr)
+})
 ```
