@@ -16,6 +16,9 @@
 ## example
 webpack.config.js
 ``` javascript
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HashwatcherWebpackPlugin = require('hashwatcher-webpack-plugin')
+
 module.exports = {
   entry: {
     app: './src/index.js'
