@@ -1,5 +1,5 @@
 # Hashwatcher-webpack-plugin
-It will create two js-files after webpack build, 'jsonRender.js' records the webpack chunk-hash map, 'webpackHashWatcher.js' used in browser.
+用于webpack打包到生产环境后，客户端无刷新的情况下通知用户版本变更信息。
 
 ## install
 ``` node
