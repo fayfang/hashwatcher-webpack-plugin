@@ -1,5 +1,5 @@
 # Hashwatcher-webpack-plugin
-用于webpack打包到生产环境后，客户端无刷新的情况下通知用户版本变更信息。依赖createEvent，用addEventListener接受事件。
+用于webpack打包到生产环境后，客户端无刷新的情况下通知用户版本变更信息。依赖createEvent，用addEventListener接收事件。
 
 ## install
 ``` node
