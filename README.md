@@ -40,5 +40,6 @@ index.js
 // wehn then hash change, it will receive a 'webpackHashChange' event
 document.addEventListener('webpackHashChange', (e) => {
   console.log(e.diffArr)
+  alert('检测到系统已更新，请刷新页面更新系统')
 })
 ```
